@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 
 const App = () => {
   const goals = useSelector(state => state.goals);
-  const [view, setView] = useState('goals'); // Estado para controlar la vista entre las tasks y los goals
+  const [view, setView] = useState('goals'); 
 
   const handleNavClick = (selectedView) => {
     setView(selectedView);
