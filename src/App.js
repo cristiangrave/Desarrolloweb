@@ -7,15 +7,19 @@ import TaskList from './components/TaskList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const App = () => {
+  /*Añadiendo el el backend al fronted  */
+
   const goals = useSelector(state => state.goals);
   const [view, setView] = useState('goals'); 
-
   const handleNavClick = (selectedView) => {
     setView(selectedView);
   };
-
+  function initFetch() { 
+    fetch("http://localhost:3001/tasks/task/getTasks", {}).catch();
+  }
   return (
     <div className="App">
       <MyNavbar onViewChange={handleNavClick} />
