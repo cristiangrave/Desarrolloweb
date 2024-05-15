@@ -14,9 +14,9 @@ function Menu() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav>
-            <Nav.Link href="#home">Tasks</Nav.Link>
+            <Nav.Link href="#home">task</Nav.Link>
             <Nav.Link href="#link" onClick={changeOptionFunc}>
-              Goals
+              goals
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

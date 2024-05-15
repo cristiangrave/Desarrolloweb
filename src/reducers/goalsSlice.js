@@ -6,7 +6,7 @@ export const goalsSlice = createSlice({
     value: [
       {
         name: "Graduarme del TDS",
-        description: "Ganar todos los cursos",
+        description: "Ganar los Cursos",
         dueDate: "01-12-24",
       },
     ],
