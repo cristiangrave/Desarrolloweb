@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const goalsSlice = createSlice({
-  name: "goals",
+export const tasksSlice = createSlice({
+  name: "tasks",
   initialState: [],
   reducers: {
-    addGoal: (state, action) => {
+    addTask: (state, action) => {
       state.push({ ...action.payload, id: Math.random() });
-      /*aqui se agrega la peticion a nuestro backend o nuestros endpoints*/
-      fetch("http://localhost:3001/goals/addGoal", {
+      fetch("http://localhost:3001/tasks/addtasks", {
         method: "POST",
         headers: {
           "Content-Type": "aplication/json",
@@ -18,8 +17,8 @@ export const goalsSlice = createSlice({
         console.log(err);
       });
     },
-    removeGoal: (state, action) => {
-      fetch("http://localhost:3001/tasks/goals/removeGoal", +action.payload, {
+    removeTask: (state, action) => {
+      fetch("http://localhost:3001/tasks/task/removetaks", +action.payload, {
         method: "DELETE",
         headers: {
           "Content-Type": "aplication/json",
@@ -28,11 +27,11 @@ export const goalsSlice = createSlice({
       }).catch((err) => {
         console.log(err);
       });
-      return state.filter((goal) => goal.id !== action.payload);
+      return state.filter((task) => task.id !== action.payload);
     },
   },
 });
 
-export const { addGoal, removeGoal } = goalsSlice.actions;
+export const { addTask, removeTask } = tasksSlice.actions;
 
-export default goalsSlice.reducer;
+export default tasksSlice.reducer;
